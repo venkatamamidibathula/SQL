@@ -1,0 +1,13 @@
+/* Query to get all employees start with S*/
+/* Query to get all employees end with S*/
+/*Query to display 'A' in 3rd position */
+/*Query for 'E' is second character from last */
+/* Display employees joined in January month */
+/*Employees working as clerk , manager and earning btw 2000 and 5000 and joined in 1981 and not working for dept 10,20*/
+/* Find employees where commisions are null or display employees who earn some commision*/
+
+
+
+
+
+

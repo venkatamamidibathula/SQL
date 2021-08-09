@@ -1,0 +1,27 @@
+REM INSERTING into COUNTRIES
+SET DEFINE OFF;
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Afghanistan','AF');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Albania','AL');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Algeria','DZ');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('American Samoa','AS');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Andorra','AD');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Angola','AO');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Anguilla','AI');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Antarctica','AQ');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Antigua and Barbuda','AG');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Argentina','AR');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Armenia','AM');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Aruba','AW');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Australia','AU');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Austria','AT');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Azerbaijan','AZ');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Bahamas (the)','BS');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Bahrain','BH');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Bangladesh','BD');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Barbados','BB');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Belarus','BY');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Belgium','BE');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Belize','BZ');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Benin','BJ');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Bermuda','BM');
+Insert into COUNTRIES (COUNTRY,COUNTRYCODE) values ('Bhutan','BT');

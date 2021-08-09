@@ -1,0 +1,49 @@
+--------------------------------------------------------
+--  File created - Tuesday-August-04-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table EMP
+--------------------------------------------------------
+
+  CREATE TABLE "FOLSOM_DB"."EMP" 
+   (	"EMPNO" NUMBER(4,0), 
+	"ENAME" VARCHAR2(10 BYTE), 
+	"JOB" VARCHAR2(9 BYTE), 
+	"MGR" NUMBER(4,0), 
+	"HIREDATE" DATE, 
+	"SAL" NUMBER(7,2), 
+	"COMM" NUMBER(7,2), 
+	"DEPTNO" NUMBER(2,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_EMP
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "FOLSOM_DB"."PK_EMP" ON "FOLSOM_DB"."EMP" ("EMPNO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table EMP
+--------------------------------------------------------
+
+  ALTER TABLE "FOLSOM_DB"."EMP" ADD CONSTRAINT "PK_EMP" PRIMARY KEY ("EMPNO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMP
+--------------------------------------------------------
+
+  ALTER TABLE "FOLSOM_DB"."EMP" ADD CONSTRAINT "FK_DEPTNO" FOREIGN KEY ("DEPTNO")
+	  REFERENCES "FOLSOM_DB"."DEPT" ("DEPTNO") ENABLE;
