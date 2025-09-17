@@ -1,5 +1,6 @@
 version: '3.8'
 services:
+  # PostgreSQL Service
   postgres:
     image: postgres:15
     container_name: postgres-db
@@ -13,6 +14,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
 
+  # pgAdmin Service
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
@@ -20,10 +22,41 @@ services:
       - PGADMIN_DEFAULT_EMAIL=admin@example.com
       - PGADMIN_DEFAULT_PASSWORD=admin
     ports:
-      - "8081:80"  # Changed from 8080 to 8081
+      - "8081:80"
     depends_on:
       - postgres
     restart: unless-stopped
 
+  # MongoDB Service
+  mongodb:
+    image: mongo:6
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mahesh
+      - MONGO_INITDB_ROOT_PASSWORD=mahesh
+      - MONGO_INITDB_DATABASE=college_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+  # Mongo-Express Service
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=mahesh
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=mahesh
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=admin
+    ports:
+      - "8082:8081"
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
 volumes:
   postgres_data:
+  mongodb_data:
