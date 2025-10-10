@@ -8,6 +8,7 @@ Computations over values in multiple rows.
 - avg
 - count
 
+
 GROUP BY : Allow us to parition results into groups and will perform aggregated functions over each group independently.
 
 HAVING: Allows us to test filters on the results of aggregate values.
@@ -42,3 +43,22 @@ FROM APPLY
 WHERE CNAME = 'Cornell'
 ```
 
+4. How much avg gpa of cs students exceeds noncs students gpa?
+
+** we can write a subquery in select clause as long as it produces just a single value**
+
+```sql
+
+SELECT CSe.gpa - NONCS.gpa
+fROM 
+(SELECT AVG(S1.GPA) as gpa FROM student S1 JOIN Apply A USING(SID) where A.major = 'CS' ) CSe,
+(SELECT AVG(S1.GPA) as gpa FROM student S1 JOIN Apply A USING(SID) where A.major <> 'CS') NONCS
+
+```
+
+```sql
+
+SELECT((SELECT AVG(S1.GPA) as gpa FROM student S1 JOIN Apply A USING(SID) where A.major = 'CS') - 
+(SELECT AVG(S1.GPA) as gpa FROM student S1 JOIN Apply A USING(SID) where A.major <> 'CS')) 
+
+```

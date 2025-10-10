@@ -4,3 +4,4 @@
 4. Find all colleges that have at least one other college in the same state?
 5. Find the students with highest GPA?
 6. Find the student(s) with the 4th  highest GPA?
+7. Find the students who have not applied to any college?
