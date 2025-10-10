@@ -32,4 +32,18 @@ select a.sid from apply a where a.major='CS'
 EXCEPT
 select a.sid from apply a where a.major='EE'
 ```
+---
+
+**Joins**
+
+**Left Outer Join**
+
+**Students who have not applied to any college**
+
+```SQL
+SELECT S1.SID AS StudentID,S1.SNAME, A.CNAME, A.decision AS decision
+from STUDENT S1 LEFT OUTER JOIN APPLY A USING(SID)
+where decision is NULL
+```
+
 
