@@ -151,7 +151,7 @@ having count(DISTINCT sid) < 5
 ```
 
 12. Majors whose applicants GPA is below average?
-``sql
+```sql
 SELECT major
 FROM STUDENT JOIN APPLY USING (SID)
 group by major 
