@@ -40,8 +40,11 @@ JOIN employee m ON e.mgr = m.empno;
 8. How many reportees under each manager?
 
 ```sql
-SELECT e.ename AS Employee, m.ename AS Manager
-FROM employee e
-JOIN employee m ON e.mgr = m.empno;
+
+SELECT mgr, COUNT(*) as num_employees
+FROM EMPLOYEE
+GROUP BY mgr
+HAVING COUNT(*) > 1;
+
 ```
 

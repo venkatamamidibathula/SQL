@@ -59,3 +59,5 @@
 23. Display employee records who are not joined  in 2000 year ?
 24. Display employees who have same salaries?
 25. Display top 5 salaries in departnumber 20?
+26. Employees who report to same manager?
+27. 
