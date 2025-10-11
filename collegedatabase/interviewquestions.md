@@ -28,8 +28,10 @@
 **Composite Primary Key:** (sid, cname, major)
 
 ### Relationships
-- College (1) ──→ (N) Apply
-- Student (1) ──→ (N) Apply
+
+- **College** ──(1:N)──> **Apply**: One college receives many applications
+- **Student** ──(1:N)──> **Apply**: One student submits many applications
+
 ---
 
 1. Find all students who have applied to Computer Science in some college?
