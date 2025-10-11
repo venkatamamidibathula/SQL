@@ -53,3 +53,4 @@
 17. Colleges with fewer than 5 applications?
 18. Colleges with fewer than 5 applicants?
 19. Majors whose applicants GPA is below average?
+20. Display the top 5 salaried employees?
