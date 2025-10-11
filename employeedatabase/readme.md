@@ -17,5 +17,16 @@ SELECT * FROM EMPLOYEE
 WHERE SAL BETWEEN 2000 AND 5000;
 ```
 4. Display employee records who are joined between 1981 year?
+```sql
+SELECT * FROM EMPLOYEE
+WHERE TO_CHAR(HIREDATE,'YYYY') = '1981'
+```
 5. Display employee records who are not joined  in 2000 year ?
 
+
+6. Display top 5 salaries in departnumber 20?
+```sql
+Select emmployeename, deptnumber, rankedemployee as rankemployee, salary
+FROM (SELECT e1.ename as emmployeename, e1.deptno as deptnumber, e1.sal as salary, DENSE_RANK() OVER (ORDER BY e1.sal DESC) as rankedemployee FROM employee e1 where e1.deptno=20) NEWW
+WHERE rankedemployee between 1 and 5
+```
