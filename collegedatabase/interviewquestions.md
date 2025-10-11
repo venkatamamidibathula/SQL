@@ -60,4 +60,4 @@
 24. Display employees who have same salaries?
 25. Display top 5 salaries in departnumber 20?
 26. Employees who report to same manager?
-27. 
+27. How many employees report to each manager?
