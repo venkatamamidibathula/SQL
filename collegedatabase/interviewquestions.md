@@ -1,19 +1,36 @@
 ## Database Relationships
 
-### Tables
+## Database Schema
 
-| Table   | Primary Key           | Foreign Keys                    |
-|---------|----------------------|----------------------------------|
-| College | cname                | -                                |
-| Student | sid                  | -                                |
-| Apply   | (sid, cname, major)  | sid → Student(sid), cname → College(cname) |
+### College Table
+| Column     | Type        | Constraint |
+|------------|-------------|------------|
+| cname      | VARCHAR(50) | PRIMARY KEY|
+| state      | CHAR(2)     |            |
+| enrollment | INT         |            |
+
+### Student Table
+| Column | Type        | Constraint |
+|--------|-------------|------------|
+| sid    | INT         | PRIMARY KEY|
+| sname  | VARCHAR(50) |            |
+| GPA    | DECIMAL(2,1)|            |
+| sizehs | INT         |            |
+
+### Apply Table
+| Column   | Type        | Constraint                        |
+|----------|-------------|-----------------------------------|
+| sid      | INT         | PRIMARY KEY, FOREIGN KEY → Student|
+| cname    | VARCHAR(50) | PRIMARY KEY, FOREIGN KEY → College|
+| major    | VARCHAR(50) | PRIMARY KEY                       |
+| decision | CHAR(1)     |                                   |
+
+**Composite Primary Key:** (sid, cname, major)
 
 ### Relationships
-
-- **College** ──(1:N)──> **Apply**: One college receives many applications
-- **Student** ──(1:N)──> **Apply**: One student submits many applications
-
-
+- College (1) ──→ (N) Apply
+- Student (1) ──→ (N) Apply
+---
 
 1. Find all students who have applied to Computer Science in some college?
 2. Write a query to find GPA of CS Applicants?
