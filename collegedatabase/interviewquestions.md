@@ -1,3 +1,20 @@
+## Database Relationships
+
+### Tables
+
+| Table   | Primary Key           | Foreign Keys                    |
+|---------|----------------------|----------------------------------|
+| College | cname                | -                                |
+| Student | sid                  | -                                |
+| Apply   | (sid, cname, major)  | sid → Student(sid), cname → College(cname) |
+
+### Relationships
+
+- **College** ──(1:N)──> **Apply**: One college receives many applications
+- **Student** ──(1:N)──> **Apply**: One student submits many applications
+
+
+
 1. Find all students who have applied to Computer Science in some college?
 2. Write a query to find GPA of CS Applicants?
 3. Find students who applied for Computer Science but not Electrical Engineering?
