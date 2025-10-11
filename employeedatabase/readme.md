@@ -30,3 +30,18 @@ Select emmployeename, deptnumber, rankedemployee as rankemployee, salary
 FROM (SELECT e1.ename as emmployeename, e1.deptno as deptnumber, e1.sal as salary, DENSE_RANK() OVER (ORDER BY e1.sal DESC) as rankedemployee FROM employee e1 where e1.deptno=20) NEWW
 WHERE rankedemployee between 1 and 5
 ```
+7. Employees who report to same manager?
+
+```sql
+SELECT e.ename AS Employee, m.ename AS Manager
+FROM employee e
+JOIN employee m ON e.mgr = m.empno;
+```
+8. How many reportees under each manager?
+
+```sql
+SELECT e.ename AS Employee, m.ename AS Manager
+FROM employee e
+JOIN employee m ON e.mgr = m.empno;
+```
+
