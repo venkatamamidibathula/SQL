@@ -54,3 +54,7 @@
 18. Colleges with fewer than 5 applicants?
 19. Majors whose applicants GPA is below average?
 20. Display the top 5 salaried employees?
+21. Display employee records earning between 2000 and 5000?
+22. Display employee records who are joined between 1981 year?
+23. Display employee records who are not joined  in 2000 year ?
+24. Display employees who have same salaries?
