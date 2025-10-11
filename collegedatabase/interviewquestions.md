@@ -58,3 +58,4 @@
 22. Display employee records who are joined between 1981 year?
 23. Display employee records who are not joined  in 2000 year ?
 24. Display employees who have same salaries?
+25. Display top 5 salaries in departnumber 20?
