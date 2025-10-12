@@ -36,6 +36,19 @@
 
 1. Find all students who have applied to Computer Science in some college?
 2. Write a query to find GPA of CS Applicants?
+
+```sql
+SELECT S.SID Studentid, S.SNAME as StudentName, S.GPA AS StudentGPA FROM STUDENT S
+WHERE S.SID IN (SELECT A.SID FROM APPLY A WHERE A.MAJOR = 'CS' )
+ORDER BY S.GPA DESC;
+```
+```sql
+SELECT DISTINCT S.SID AS STUDENTID, S.SNAME AS StudentName, S.GPA AS StudentGPA FROM STUDENT S JOIN APPLY A
+ON S.SID=A.SID
+WHERE A.MAJOR = 'CS'
+ORDER BY S.GPA DESC;
+```
+
 3. Find students who applied for Computer Science but not Electrical Engineering?
 4. Find all colleges that have at least one other college in the same state?
 5. Find the students with highest GPA?
@@ -61,3 +74,5 @@
 25. Display top 5 salaries in departnumber 20?
 26. Employees who report to same manager?
 27. How many employees report to each manager?
+28. How does joins work?
+    They are actually cartesian product of two tables joined using a common column. A table with students applying to many colleges if u join them using sid you get 16x20=320 records back.
