@@ -72,6 +72,12 @@ WHERE RANKED=4;
 ```
 7. Find the students who have not applied to any college?
 8. Query to find average gpa of students who applied to major in 'CS'?
+```sql
+SELECT AVG(S.GPA)
+FROM STUDENT S 
+WHERE S.SID in (SELECT A.SID FROM APPLY A WHERE A.MAJOR='CS')
+
+```
 9. Query to find the count of colleges where enrollment is greater than 15000?
 10. Query to find count of students who applied to cornell?
 11. How much avg gpa of cs students exceeds noncs students gpa?
