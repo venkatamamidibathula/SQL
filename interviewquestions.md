@@ -64,6 +64,12 @@ DENSE_RANK() OVER (ORDER BY S.GPA DESC) AS RANKED FROM STUDENT S ) NEWT
 WHERE RANKED=1;
 ```
 6. Find the student(s) with the 4th highest GPA?
+```sql
+SELECT STUDENTID, StudentName, StudentGpa, RANKED AS STUDENTRANK
+FROM (SELECT S.SID AS STUDENTID , S.GPA StudentGpa, S.SNAME StudentName, 
+DENSE_RANK() OVER (ORDER BY S.GPA DESC) AS RANKED FROM STUDENT S ) NEWT
+WHERE RANKED=4;
+```
 7. Find the students who have not applied to any college?
 8. Query to find average gpa of students who applied to major in 'CS'?
 9. Query to find the count of colleges where enrollment is greater than 15000?
