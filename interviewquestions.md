@@ -52,10 +52,17 @@ ORDER BY S.GPA DESC;
 3. Find students who applied for Computer Science but not Electrical Engineering?
 ```sql
 SELECT S.SID Studentid, S.SNAME as StudentName, S.GPA AS StudentGPA FROM STUDENT S
-WHERE S.SID IN (SELECT A.SID FROM APPLY A WHERE A.MAJOR = 'CS') AND NOT S.SID IN (SELECT A.SID FROM APPLY A WHERE A.MAJOR='EE')
+WHERE S.SID IN (SELECT A.SID FROM APPLY A WHERE A.MAJOR = 'CS') 
+AND S.SID NOT IN (SELECT A.SID FROM APPLY A WHERE A.MAJOR='EE')
 ```
 4. Find all colleges that have at least one other college in the same state?
 5. Find the students with highest GPA?
+```sql
+SELECT STUDENTID, StudentName, StudentGpa, RANKED AS STUDENTRANK FROM 
+(SELECT S.SID AS STUDENTID , S.GPA StudentGpa, S.SNAME StudentName, 
+DENSE_RANK() OVER (ORDER BY S.GPA DESC) AS RANKED FROM STUDENT S ) NEWT
+WHERE RANKED=1;
+```
 6. Find the student(s) with the 4th highest GPA?
 7. Find the students who have not applied to any college?
 8. Query to find average gpa of students who applied to major in 'CS'?
