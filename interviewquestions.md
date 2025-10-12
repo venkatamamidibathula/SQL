@@ -98,4 +98,4 @@ WHERE S.SID in (SELECT A.SID FROM APPLY A WHERE A.MAJOR='CS')
 26. Employees who report to same manager?
 27. How many employees report to each manager?
 28. How does joins work?
-    They are actually cartesian product of two tables joined using a common column. A table with students applying to many colleges if u join them using sid you get 16x20=320 records back.
+    - They are actually cartesian product of two tables joined using a common column. A table with students applying to many colleges if u join them using sid you get 16x20=320 records back.
