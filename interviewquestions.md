@@ -90,6 +90,11 @@ FROM COLLEGE C
 WHERE C.enrollment>15000
 ```
 10. Query to find count of students who applied to cornell?
+```sql
+SELECT COUNT(DISTINCT SID)
+FROM APPLY
+WHERE CNAME = 'Cornell'
+```
 11. How much avg gpa of cs students exceeds noncs students gpa?
 ```sql
 SELECT CSe.gpa - NONCS.gpa
