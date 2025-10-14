@@ -84,6 +84,11 @@ FROM STUDENT S
 WHERE S.SID in (SELECT A.SID FROM APPLY A WHERE A.MAJOR='CS')
 ```
 9. Query to find the count of colleges where enrollment is greater than 15000?
+```sql
+SELECT COUNT(C.CNAME)
+FROM COLLEGE C
+WHERE C.enrollment>15000
+```
 10. Query to find count of students who applied to cornell?
 11. How much avg gpa of cs students exceeds noncs students gpa?
 12. Query to find total applicants for each college?
