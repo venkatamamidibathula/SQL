@@ -91,6 +91,12 @@ WHERE C.enrollment>15000
 ```
 10. Query to find count of students who applied to cornell?
 11. How much avg gpa of cs students exceeds noncs students gpa?
+```sql
+SELECT CSe.gpa - NONCS.gpa
+fROM 
+(SELECT AVG(S1.GPA) as gpa FROM student S1 JOIN Apply A USING(SID) where A.major = 'CS' ) CSe,
+(SELECT AVG(S1.GPA) as gpa FROM student S1 JOIN Apply A USING(SID) where A.major <> 'CS') NONCS
+```
 12. Query to find total applicants for each college?
 13. College enrollments by state?
 14. Query to find minimum and maximum gpa for each college and corresponding major?
