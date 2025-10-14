@@ -71,12 +71,17 @@ DENSE_RANK() OVER (ORDER BY S.GPA DESC) AS RANKED FROM STUDENT S ) NEWT
 WHERE RANKED=4;
 ```
 7. Find the students who have not applied to any college?
+```sql
+SELECT S.SID AS STUDENTID, S.SNAME AS STUDENTNAME
+FROM STUDENT S LEFT JOIN APPLY A 
+ON S.SID = A.SID
+WHERE A.MAJOR IS NULL
+```
 8. Query to find average gpa of students who applied to major in 'CS'?
 ```sql
 SELECT AVG(S.GPA)
 FROM STUDENT S 
 WHERE S.SID in (SELECT A.SID FROM APPLY A WHERE A.MAJOR='CS')
-
 ```
 9. Query to find the count of colleges where enrollment is greater than 15000?
 10. Query to find count of students who applied to cornell?
