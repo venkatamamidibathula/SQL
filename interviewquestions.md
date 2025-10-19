@@ -130,7 +130,17 @@ group by major
 having max(gpa) < (SELECT AVG(GPA) FROM student)
 ```
 20. Display the top 5 salaried employees?
+```sql
+SELECT EmployeeNumber, EmployeeName, Salary, Ranke as RankedEmployees
+FROM (SELECT E.empno as EmployeeNumber, E.ename as EmployeeName, E.sal as Salary, DENSE_RANK() OVER(ORDER BY E.sal DESC) as Ranke FROM EMPLOYEE E) RANKED
+where Ranke BETWEEN 1 AND 5
+```
 21. Display employee records earning between 2000 and 5000?
+```sql
+SELECT E.Empno, E.ename, E.sal from Employee E
+where E.sal between 2000 and 5000
+order by E.SAL DESC
+```
 22. Display employee records who are joined between 1981 year?
 23. Display employee records who are not joined  in 2000 year ?
 24. Display employees who have same salaries?
