@@ -108,8 +108,27 @@ fROM
 15. Find the largest spread of minimum and maximum gpa for each college and corresponding major?
 16. Query to find the number of colleges applied by each student?
 17. Colleges with fewer than 5 applications?
+```sql
+SELECT CNAME
+FROM APPLY 
+GROUP BY CNAME
+HAVING COUNT(*)<5
+
+```
 18. Colleges with fewer than 5 applicants?
+```sql
+SELECT CNAME
+FROM APPLY 
+GROUP BY CNAME
+HAVING COUNT(DISTINCT SID)<5
+```
 19. Majors whose applicants GPA is below average?
+```sql
+SELECT major
+FROM STUDENT JOIN APPLY USING (SID)
+group by major 
+having max(gpa) < (SELECT AVG(GPA) FROM student)
+```
 20. Display the top 5 salaried employees?
 21. Display employee records earning between 2000 and 5000?
 22. Display employee records who are joined between 1981 year?
