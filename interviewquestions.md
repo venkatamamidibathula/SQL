@@ -103,8 +103,19 @@ fROM
 (SELECT AVG(S1.GPA) as gpa FROM student S1 JOIN Apply A USING(SID) where A.major <> 'CS') NONCS
 ```
 12. Query to find total applicants for each college?
+```sql
+SELECT count(*) AS TOTALAPPLICATIONS,CNAME AS COLLEGENAME
+FROM APPLY
+GROUP BY CNAME
+```
 13. College enrollments by state?
 14. Query to find minimum and maximum gpa for each college and corresponding major?
+```sql
+SELECT cname, major, min(gpa),max(gpa)
+from student join apply  using(sid)
+group by cname,major
+
+```
 15. Find the largest spread of minimum and maximum gpa for each college and corresponding major?
 16. Query to find the number of colleges applied by each student?
 17. Colleges with fewer than 5 applications?
